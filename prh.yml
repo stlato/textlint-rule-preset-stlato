@@ -1,0 +1,46 @@
+---
+version: 1
+rules:
+  - expected: Zenn
+    pattern:
+      - zenn
+  - expected: ヶ月
+    patterns:
+      - か月
+      - カ月
+  - expected: 取り組み
+    pattern: 取組み
+  - expected: すべて
+    pattern: 全て
+  - expected: ください
+    pattern: 下さい
+  - expected: および
+    pattern: 及び
+  - expected: または
+    pattern: 又は
+  - expected: $1ていただ$2
+    pattern: /(させ|し)て頂(く|き|い)/
+    specs:
+      - from: させて頂く
+        to: させていただく
+      - from: させて頂き
+        to: させていただき
+      - from: して頂く
+        to: していただく
+      - from: して頂き
+        to: していただき
+      - from: して頂いた
+        to: していただいた
+  - expected: でき$1
+    pattern: /出来([^かね])/
+    specs:
+      - from: 出来る
+        to: できる
+      - from: 出来ます
+        to: できます
+      - from: 出来ません
+        to: できません
+      - from: 出来かねる
+        to: 出来かねる
+      - from: 出来かねます
+        to: 出来かねます

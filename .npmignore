@@ -1,0 +1,14 @@
+.vscode
+node_modules/
+test/
+.editorconfig
+.eslintignore
+.eslintrc.js
+.gitignore
+.prettierrc
+renovate.json
+tsconfig.json
+yarn-error.log
+example/
+bk.md
+prh.yaml
